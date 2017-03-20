@@ -2,7 +2,7 @@
 jQuery plugin for parallax landing elements
 
   
-## 1) Put jquery and js/landingElements.js as dependencies in your file html and inizilize the plugin
+## 1) Put jquery and js/landingElements.js as dependencies in your file html and initialize the plugin
    The .yourclass is the class of the parent element where the animated children are.
 
 ```
