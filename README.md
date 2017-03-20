@@ -9,7 +9,7 @@ jQuery plugin for parallax landing elements
   <script src="jquery-1.12.4.js" </script>
   <script src="js/landingElements.js"></script>
   <script>
-     $('.yourclass').landingElements() // this inizialize the plugin
+     $('.yourclass').landingElements() // this initialize the plugin
   </script>
 ```
 
