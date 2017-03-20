@@ -1,0 +1,30 @@
+
+body {
+   overflow-x: hidden;
+}
+
+.rowLandingElement {
+  width:100%;
+  margin: 0 auto;
+}
+
+.first,
+.center,
+.last {
+  float:left;
+  width:25%;
+  height:200px;
+  margin: auto 2.5%;
+}
+
+.first {
+  background-color: green;
+}
+
+.center {
+  background-color: green;
+}
+
+.last {
+  background-color: green;
+}
