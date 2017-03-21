@@ -37,8 +37,6 @@
                   hDirection,
                   vDirection;
 
-                  var allClass = $this.attr('class');
-
                     if($this.attr('data-left')<0) {
                       hDirection = 1;
                     }
