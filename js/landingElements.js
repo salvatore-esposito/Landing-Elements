@@ -33,33 +33,10 @@
           if(triggerDistance - $(window).scrollTop() < 100)
           {
             $this.children().each(function(){
-              var $this = $(this),
-                  hDirection,
-                  vDirection;
-
-                    if($this.attr('data-left')<0) {
-                      hDirection = 1;
-                    }
-                    else if ($this.attr('data-left')>0)
-                    {
-                      hDirection = -1;
-                    }
-                    else {
-                      hDirection = null;
-                    };
-
-                    if($this.attr('data-bottom')<0) {
-                      vDirection = 1;
-                    }
-                    else if ($this.attr('data-bottom')>0)
-                    {
-                      vDirection = -1;
-                    }
-                    else {
-                      vDirection = null;
-                    };
-
-                    showElement($this, hDirection, vDirection, duration);
+              var $this = $(this);
+                  //hDirection,
+                  //vDirection;
+                    showElement($this, duration);
 
                   });
               }
@@ -67,9 +44,32 @@
       });
 
       //this function perform the motion and fading in of elements
-      function showElement($el, hDirection, vDirection, duration) {
+      function showElement($el, duration) {
 
         if($el.css('position')==="static") return;
+
+        if($el.attr('data-left')<0) {
+          hDirection = 1;
+        }
+        else if ($el.attr('data-left')>0)
+        {
+          hDirection = -1;
+        }
+        else {
+          hDirection = null;
+        };
+
+        if($el.attr('data-bottom')<0) {
+          vDirection = 1;
+        }
+        else if ($el.attr('data-bottom')>0)
+        {
+          vDirection = -1;
+        }
+        else {
+          vDirection = null;
+        };
+
 
         var $bottom = parseInt($el.css('bottom')),
             $left = parseInt($el.css('left')),
