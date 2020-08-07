@@ -1,42 +1,35 @@
-# Landing-Elements
-jQuery plugin for parallax landing elements
+# Js Sarter kit 
 
-  
-## 1) Put jquery and js/landingElements.js as dependencies in your file html and initialize the plugin
-   The .yourclass is the class of the parent element where the animated children are.
+This is a starter kit for your js project.
 
+#### Use
+
+Download the repository and run: 
+```sh
+docker-compose up --build -d
 ```
-  <script src="jquery-1.12.4.js" </script>
-  <script src="js/landingElements.js"></script>
-  <script>
-     $('.yourclass').landingElements() // this initialize the plugin
-  </script>
+After run the command, you can reach the container at: 192.28.1.1:3000
+
+Please note that if the port is alredy in use, you can have a different port: use docker inspect or docker port to be sure.
+
+#### Compiled assets and node_modules
+
+Please note that the kit compiles assets and install node_modules in the image when it's built, so you can't see them in your local environment. The only file used as volume hosted are the directory src and the webpack.mix.js.
+
+#### User
+
+The user by default is salvio, if you wish to change the username you can modify it in .docker-env and rebuild the image.
+
+### Other
+
+Note that by a bug in laravel mix I hade to fix a second slash in js output asset in webpack.mix.js
+
+```sh
+mix.override(config => {
+  config.entry = Object.keys(config.entry).reduce((acc, key) => {
+    acc[key.replace(/^\//, "")] = config.entry[key];
+    return acc;
+  }, {});
+});
 ```
-
-
-## 2) Set the data-left and data-bottom values. These values set the starting values of left and bottom css proprierty. So you can have:
-
-
-```
-    1) data-left>0 and data-bottom>0 - the element start from the top-right of the final position. 
-    2) data-left>0 and data-bottom<0 - the element start from the bottom-right of the final position. 
-    3) data-left<0 and data-bottom>0 - the element start from the top-left of the final position. 
-    4) data-left<0 and data-bottom<0 - the element start from the bottom-left of the final position. 
-```
-
-if you omit data-bottom element the element will only move horizontally, whereas if you omit data-left the element will only move vertically
-
-Another value you need to set is data-time that is the duration of animation row.
-
-example:
-
-    
-```
-    <div class=".yourclass" data-time="1000">
-      <div data-left="-250" data-bottom="500">primo</div>
-      <div data-bottom="-300">centrale</div>
-      <div data-left="250" data-bottom="500">ultimo</div>
-     </div>
-```
-
-You can see a demo [here](https://codepen.io/anon/pen/NpXZZX).
+If you have some issume you can delete this block.
